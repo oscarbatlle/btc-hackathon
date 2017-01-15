@@ -50,9 +50,6 @@ class AffiliateController extends Controller
 
         return redirect('/affiliates')->withStatus('Your Affiliate has been created.');
 
-        // Create affiliate wallet
-
-        // Create affiliate api key 
     }
     
 }

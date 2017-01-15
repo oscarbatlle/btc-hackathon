@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Session;
+use Request;
 
 class LoginController extends Controller
 {
@@ -36,4 +38,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+    public function showLoginForm()
+    {
+      $uri_params = Request::all();
+      if(isset($uri_params['client_id'])) {
+          unset($uri_params['client_id']);
+          unset($uri_params['response_type']);
+          Session::put('alexa-login', json_encode($uri_params, true));
+      }
+        return view('auth.login');
+    }
+
+
+
+
+
 }

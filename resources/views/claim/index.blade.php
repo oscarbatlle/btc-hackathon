@@ -1,5 +1,8 @@
 @extends('layouts.display')
 @section('content')
+
+
+
 <div style="background-color:#463ACA;" class="z-depth-1 pb-s--s">
   <div class="container">
     <div class="row">
@@ -15,7 +18,7 @@
             </a>
           </div>
           <div class="col s7 pl-s--s">
-            <a id="continue-link" class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;">
+            <a id="continue-link" class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;" href="{{$campaign['url']}}">
               <i style="width:8px;background-color:#322a8c;height:8px;border-radius:4em;padding:1px 9px;" class="countdown mr-s--s"></i>Skip This <i class="material-icons" style="font-size:30px;">chevron_right</i>
             </a>
           </div>
@@ -42,7 +45,7 @@
             <h2 class="h1 tw-light">Claim Reward</h2>
             
             <div class="row">
-              <p>Reward Amount: $0.05 or 0.00012 ฿ </p>
+              <p>Reward Amount: ${{number_format($campaign['payout'],2)}} or {{number_format($campaign['payout']/$btc_value,6)}} ฿ </p>
             </div>
             <div class="row pl-s--s pr-s--s pb-s--s pt-s--s">
               <a class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;">

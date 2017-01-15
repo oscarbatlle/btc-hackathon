@@ -12,6 +12,9 @@
 */
 Route::get('/', 'DashboardController@index');
 
+
+Route::get('/claim/{affiliate_id}/{campaign_id}', 'ClaimController@index');
+
 Route::get('/interstitial', function () {
     return view('interstitial');
 });

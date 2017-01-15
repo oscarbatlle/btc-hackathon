@@ -8,8 +8,9 @@ class Transaction extends Model
 {
     protected $fillable = [
         'user_id',
-        'wallet',
+        'campaign_id',
         'type',
+        'wallet',
         'amount'
     ];
 }

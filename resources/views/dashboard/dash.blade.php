@@ -50,7 +50,7 @@ Bittastic.
                </div>
                <div class="row mt-m--m">
                   <h4>Wallet Address</h4>
-                  <input type="text" style="width:100%;" value="{{ $wallet->hash }}">
+                  <input type="text" style="width:100%;" value="{{ $wallet->hash or 'No Wallet Detected' }}">
                </div>
             </div>
             <div class="row white z-depth-2 pa-m--s mt-m--m">

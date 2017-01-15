@@ -25,6 +25,7 @@ class DashboardController extends Controller
     }
 
     public function dash(){
+      
         $user = Auth::user();
         $wallet = $user->enduserwallet()->first();
         $transactions = $user->transactions()->get();

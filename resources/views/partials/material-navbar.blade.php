@@ -6,11 +6,17 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/">HOME</a></li>
-        <li><a href="/">BIT COIN NEWS</a></li>
+        <li><a href="#bitcoinnews">BITCOIN NEWS</a></li>
         @if (Route::has('login'))
           @if (Auth::check())
               <a href="{{ url('/home') }}">DASH</a>
+              <a href="{{ url('/logout') }}"
+                  onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                  LOGOUT
+              </a>
           @else
+
               <a href="{{ url('/login') }}">LOGIN</a>
               <a href="{{ url('/register') }}">REGISTER</a>
           @endif
@@ -18,7 +24,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="/">HOME</a></li>
-        <li><a href="/">BITCOIN NEWS</a></li>
+        <li><a href="#bitcoinnews">BITCOIN NEWS</a></li>
         @if (Route::has('login'))
           @if (Auth::check())
               <a href="{{ url('/home') }}">DASH</a>
@@ -29,6 +35,9 @@
         @endif
       </ul>
     </div>
+    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
   </div>
 </nav>
 </div>

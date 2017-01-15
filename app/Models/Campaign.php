@@ -26,7 +26,6 @@ class Campaign extends Model
     {
         return $this->belongsTo('App\Models\Affiliate');
     }
-    
 
     /**
      * Get tracking link

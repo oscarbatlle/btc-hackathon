@@ -13,7 +13,7 @@ class CreateWalletsTable extends Migration
      */
     public function up()
     {
-        Schema::create('wallets', function (Blueprint $table) {
+        Schema::create('affiliate_wallets', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('affiliate_id')->index();
             $table->string('hash');

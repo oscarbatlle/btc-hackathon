@@ -15,9 +15,8 @@
 </head>
 <body>
     @yield('content')
-    <script src="{{{ secure_asset('/js/vendor.js') }}}"></script>
-    <script src="{{{ secure_asset('/js/main.js') }}}"></script>
+    <script src="{{ asset('/js/vendor.js') }}"></script>
+    <script src="{{ asset('/js/main.js') }}"></script>
     @yield('specialjs')
-
 </body>
 </html>

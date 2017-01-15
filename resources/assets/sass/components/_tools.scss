@@ -858,3 +858,10 @@ background: rgba(30,28,83,0.64);
 @keyframes warlock-animation {
 	100% { background-position: -3300px; }
 }
+
+
+
+.highlight{
+   @extend .yellow;
+   @extend .lighten-2;
+}

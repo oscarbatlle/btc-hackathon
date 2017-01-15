@@ -1,4 +1,9 @@
 @extends('layouts.display')
+
+@section('onReady_Scripts')
+Bittastic.
+@stop
+
 @section('content')
 @include("partials.material-navbar")
    <div id="dashboard" class="row">
@@ -38,8 +43,8 @@
                   </div>
                   <div class="col s5">
                      <div class="row  center-align">
-                        <h3>BTC 0.000221</h3>
-                        <p class="pink-text">USD 0.18</p>
+                        <h3>BTC {{$current_wallet}}</h3>
+                        <p class="pink-text">USD {{number_format($current_wallet*$btc_current['last'],2)}}</p>
                      </div>
                   </div>
                </div>
@@ -53,7 +58,7 @@
                   <h4>BITCOIN PRICE:</h4>
                </div>
                <div class="col s6">
-                  <h4 class="right-align pink-text">USD 863.07</h4>
+                  <h4 class="right-align pink-text">USD ${{number_format($btc_current['last'],2)}}</h4>
                </div>
             </div>
             <div class="row white z-depth-2 pa-m--s mt-m--m">
@@ -64,13 +69,22 @@
                   <table class="striped">
                      <thead>
                         <tr>
-                           <th data-field="price">Payout</th>
+                           <th data-field="price">Amount $USD</th>
+                           <th >Amount BTC</th>
+                           <th>When</th>
+                           <th >Who</th>
                         </tr>
                      </thead>
                      <tbody>
                         @foreach($transactions as $transaction)
                         <tr>
                            <td>$ {{ $transaction->amount }}</td>
+                           <td>{{ number_format($transaction->amount_btc,6) }}</td>
+                           <td>{{ date('m/d/Y',strtotime($transaction->created_at)) }}</td>
+                           <td>
+                              <?php $tc = $transaction->campaign()->first();?>
+                                 {{$tc->name}}
+                           </td>
                         </tr>
                         @endforeach
                      </tbody>

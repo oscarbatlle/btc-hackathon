@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Auth;
 use View;
 use Feeds;
+use Curl;
 
 class DashboardController extends Controller
 {
@@ -27,7 +28,23 @@ class DashboardController extends Controller
         $user = Auth::user();
         $wallet = $user->enduserwallet()->first();
         $transactions = $user->transactions()->get();
+        $btc_current = $this->grab_currency_value('USD');
+        $current_wallet = $this->grab_current_wallet($wallet->hash)/10000000;
+        return view('dashboard.dash', compact('wallet', 'user', 'transactions','btc_current','current_wallet'));
+    }
 
-        return view('dashboard.dash', compact('wallet', 'user', 'transactions'));
+
+    public static function grab_current_wallet($hash = null) {
+      $response = Curl::to('https://blockchain.info/rawaddr/'.$hash)->get();
+      $response = json_decode($response, true);
+      return (isset($response['final_balance']))? $response['final_balance'] : 0;
+    }
+    public static function grab_currency_value($currency = null) {
+      $response = Curl::to('https://blockchain.info/ticker')->get();
+      $response = json_decode($response, true);
+      if($currency != null && isset($response[$currency])){
+        return $response[$currency];
+      }
+      return $response;
     }
 }

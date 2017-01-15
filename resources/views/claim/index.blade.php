@@ -43,10 +43,10 @@
             <h2 class="h1 tw-light">Claim Reward</h2>
 
             <div class="row">
-              <p>Reward Amount: ${{number_format($campaign['payout'],2)}} or {{number_format($campaign['payout']/$btc_value,6)}} ฿ </p>
+              <p>Reward Amount: ${{number_format($campaign['payout'],2)}} / {{number_format($campaign['payout']/$btc_value,6)}} ฿ </p>
             </div>
             <div class="row pl-s--s pr-s--s pb-s--s pt-s--s">
-              <a class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;">
+              <a class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;" href="/success/{{$affiliate_id}}/{{$campaign_id}}">
                 Claim Your Reward! <i class="material-icons" style="font-size:30px;">chevron_right</i>
               </a>
             </div>
@@ -71,7 +71,7 @@
     <div class="col s12 m6 pa-m--m pa-s--s">
       <h3 class="deep-purple-text">You’ve heard about Bitcoin</h3>
       <p>Now is your chance to own some!  Follow the link below to claim your reward.</p>
-      <a href="" class="btn deep-purple darken-3 white-text mt-m--s">฿ Claim Reward</a>
+      <a href="/success/{{$affiliate_id}}/{{$campaign_id}}" target="_blank" class="btn deep-purple darken-3 white-text mt-m--s">฿ Claim Reward</a>
     </div>
   </div>
 </div>

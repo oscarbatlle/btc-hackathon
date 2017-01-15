@@ -22,10 +22,10 @@ class ClaimController extends Controller
 {
     public function index(Request $request,$affiliate_id,$campaign_id){
       $campaign = Campaign::where(['affiliate_id'=>$affiliate_id])->where(['id'=>$campaign_id])->first();
-      $transactions = $campaign->transaction()->get();
+      $transactions = Transaction::where(['campaign_id'=>$campaign_id])->get();
       $btc_current = $this->grab_currency_value('USD');
-      if(count($transactions) == 0 || $transaction->sum('amount') < $campaign['daily_budget']){
-        return view('claim.index',['campaign'=>$campaign,'btc_value'=>$btc_current['last']]);
+      if(count($transactions) == 0 || $transactions->sum('amount') < $campaign['daily_budget']){
+        return view('claim.index',['campaign'=>$campaign,'affiliate_id'=>$affiliate_id,'campaign_id'=>$campaign_id,'btc_value'=>$btc_current['last']]);
 
       }else{
           return redirect($campaign['url']);
@@ -42,13 +42,23 @@ class ClaimController extends Controller
     }
 
 
-    public static function thankyou($hash) {
+    public function reward(Request $request,$affiliate_id,$campaign_id){
+      $campaign = Campaign::where(['affiliate_id'=>$affiliate_id])->where(['id'=>$campaign_id])->first();
+      $transactions = Transaction::where(['campaign_id'=>$campaign_id])->get();
+      $btc_current = $this->grab_currency_value('USD');
+      $override_amount = $request->input('amount')*0.01;
+      if(count($transactions) == 0 || $transactions->sum('amount') < $campaign['daily_budget']){
+        return view('claim.reward',['campaign'=>$campaign,'affiliate_id'=>$affiliate_id,'campaign_id'=>$campaign_id,'btc_value'=>$btc_current['last'],'override_amount'=>$override_amount]);
 
-      $data['amount'] = "0.005";
-      $data['hash'] = "1JfBpkfBSfqWRVw5X2b5yJgYGrGuTgFazy";
+      }else{
+          return redirect($campaign['url']);
+      }
+    }
 
-
-      return view('claim.thankyou', ["data" => $data]);
+    public function thanks(Request $request,$affiliate_id,$campaign_id){
+      $campaign = Campaign::where(['affiliate_id'=>$affiliate_id])->where(['id'=>$campaign_id])->first();
+      $btc_current = $this->grab_currency_value('USD');
+        return view('claim.thanks',['campaign'=>$campaign,'affiliate_id'=>$affiliate_id,'campaign_id'=>$campaign_id,'btc_value'=>$btc_current['last']]);
 
     }
 }

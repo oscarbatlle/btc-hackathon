@@ -18,6 +18,8 @@ Route::get('/interstitial', function () {
     return view('interstitial');
 });
 
+Route::get('sendmoney', 'CoinBaseController@sendTransaction');
+
 Route::get('/thankyou/{hash}', 'ClaimController@thankyou');
 
 /*

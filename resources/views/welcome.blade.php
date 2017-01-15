@@ -1,46 +1,19 @@
 @extends('layouts.display')
 @section('content')
-<div class="navbar-fixed">
-<nav style="background-color:#232453;" class="z-depth-1">
-  <div class="container">
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><img src="{{asset('images/logo.svg')}}"></a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/">BIT COIN NEWS</a></li>
-        @if (Route::has('login'))
-          @if (Auth::check())
-              <a href="{{ url('/home') }}">DASH/a>
-          @else
-              <a href="{{ url('/login') }}">LOGIN</a>
-              <a href="{{ url('/register') }}">REGISTER</a>
-          @endif
-        @endif
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/">BIT COIN NEWS</a></li>
-        @if (Route::has('login'))
-          @if (Auth::check())
-              <a href="{{ url('/home') }}">DASH/a>
-          @else
-              <a href="{{ url('/login') }}">LOGIN</a>
-              <a href="{{ url('/register') }}">REGISTER</a>
-          @endif
-        @endif
-      </ul>
-    </div>
-  </div>
-</nav>
-</div>
+@include('partials.material-navbar')
 <div class="hero">
   <div class="container">
     <div class="row">
       <div class="col s12 m6 pt-l--m pl-m--s pr-m--s pb-m--s">
-        <h1 class="white-text light"> Reward your visitors </h1>
-        <p class="white-text">Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains.</p>
-        <a class="waves-effect waves-light btn-large deep-purple accent-2 white-text mt-m--s pl-l--s pr-l--s"> explore </a>
+        <h1 class="white-text light"> Reward Positive Interactions with Bitcoin</h1>
+        <p class="white-text">Earn Bitcoins for doing things you already do!
+        <br/><br/>
+              - BTC Cash Back (1% Traditional Payment Methods, 1.5% BTC Payments)<br/>
+              - Taking Surveys<br/>
+              - Referal Links<br/>
+
+
+        </p>
         <div class="row">
           <img src="{{asset('images/graph-1.svg')}}">
         </div>
@@ -82,7 +55,7 @@
     <div class="row">
       <div class="container center-align">
         <div class="decentralize-text">
-          <h2 class="thin white-text">Let's Decentralize Together </h2>
+          <h2 class="thin white-text ">Earning Bitcoins has never been simpler. </h2>
         </div>
       </div>
     </div>

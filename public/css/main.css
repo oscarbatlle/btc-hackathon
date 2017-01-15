@@ -31,7 +31,7 @@
   color: #CC6161 !important;
 }
 
-.materialize-red.lighten-2 {
+.materialize-red.lighten-2, .materialize-red.highlight {
   background-color: #CF4E4E !important;
 }
 
@@ -111,7 +111,7 @@
   color: #EF9A9A !important;
 }
 
-.red.lighten-2 {
+.red.lighten-2, .red.highlight {
   background-color: #E57373 !important;
 }
 
@@ -223,7 +223,7 @@
   color: #f48fb1 !important;
 }
 
-.pink.lighten-2 {
+.pink.lighten-2, .pink.highlight {
   background-color: #f06292 !important;
 }
 
@@ -335,7 +335,7 @@
   color: #ce93d8 !important;
 }
 
-.purple.lighten-2 {
+.purple.lighten-2, .purple.highlight {
   background-color: #ba68c8 !important;
 }
 
@@ -447,7 +447,7 @@
   color: #b39ddb !important;
 }
 
-.deep-purple.lighten-2 {
+.deep-purple.lighten-2, .deep-purple.highlight {
   background-color: #9575cd !important;
 }
 
@@ -559,7 +559,7 @@
   color: #9fa8da !important;
 }
 
-.indigo.lighten-2 {
+.indigo.lighten-2, .indigo.highlight {
   background-color: #7986cb !important;
 }
 
@@ -671,7 +671,7 @@
   color: #90CAF9 !important;
 }
 
-.blue.lighten-2 {
+.blue.lighten-2, .blue.highlight {
   background-color: #64B5F6 !important;
 }
 
@@ -783,7 +783,7 @@
   color: #81d4fa !important;
 }
 
-.light-blue.lighten-2 {
+.light-blue.lighten-2, .light-blue.highlight {
   background-color: #4fc3f7 !important;
 }
 
@@ -895,7 +895,7 @@
   color: #80deea !important;
 }
 
-.cyan.lighten-2 {
+.cyan.lighten-2, .cyan.highlight {
   background-color: #4dd0e1 !important;
 }
 
@@ -1007,7 +1007,7 @@
   color: #80cbc4 !important;
 }
 
-.teal.lighten-2 {
+.teal.lighten-2, .teal.highlight {
   background-color: #4db6ac !important;
 }
 
@@ -1119,7 +1119,7 @@
   color: #A5D6A7 !important;
 }
 
-.green.lighten-2 {
+.green.lighten-2, .green.highlight {
   background-color: #81C784 !important;
 }
 
@@ -1231,7 +1231,7 @@
   color: #c5e1a5 !important;
 }
 
-.light-green.lighten-2 {
+.light-green.lighten-2, .light-green.highlight {
   background-color: #aed581 !important;
 }
 
@@ -1343,7 +1343,7 @@
   color: #e6ee9c !important;
 }
 
-.lime.lighten-2 {
+.lime.lighten-2, .lime.highlight {
   background-color: #dce775 !important;
 }
 
@@ -1423,7 +1423,7 @@
   color: #aeea00 !important;
 }
 
-.yellow {
+.yellow, .highlight {
   background-color: #ffeb3b !important;
 }
 
@@ -1431,7 +1431,7 @@
   color: #ffeb3b !important;
 }
 
-.yellow.lighten-5 {
+.yellow.lighten-5, .lighten-5.highlight {
   background-color: #fffde7 !important;
 }
 
@@ -1439,7 +1439,7 @@
   color: #fffde7 !important;
 }
 
-.yellow.lighten-4 {
+.yellow.lighten-4, .lighten-4.highlight {
   background-color: #fff9c4 !important;
 }
 
@@ -1447,7 +1447,7 @@
   color: #fff9c4 !important;
 }
 
-.yellow.lighten-3 {
+.yellow.lighten-3, .lighten-3.highlight {
   background-color: #fff59d !important;
 }
 
@@ -1455,7 +1455,7 @@
   color: #fff59d !important;
 }
 
-.yellow.lighten-2 {
+.yellow.lighten-2, .highlight {
   background-color: #fff176 !important;
 }
 
@@ -1463,7 +1463,7 @@
   color: #fff176 !important;
 }
 
-.yellow.lighten-1 {
+.yellow.lighten-1, .lighten-1.highlight {
   background-color: #ffee58 !important;
 }
 
@@ -1471,7 +1471,7 @@
   color: #ffee58 !important;
 }
 
-.yellow.darken-1 {
+.yellow.darken-1, .darken-1.highlight {
   background-color: #fdd835 !important;
 }
 
@@ -1479,7 +1479,7 @@
   color: #fdd835 !important;
 }
 
-.yellow.darken-2, .yellow.dash-item.active {
+.yellow.darken-2, .yellow.dash-item.active, .dash-item.active.highlight, .darken-2.highlight {
   background-color: #fbc02d !important;
 }
 
@@ -1487,7 +1487,7 @@
   color: #fbc02d !important;
 }
 
-.yellow.darken-3, .yellow.dash-item:hover {
+.yellow.darken-3, .yellow.dash-item:hover, .dash-item.highlight:hover, .darken-3.highlight {
   background-color: #f9a825 !important;
 }
 
@@ -1495,7 +1495,7 @@
   color: #f9a825 !important;
 }
 
-.yellow.darken-4 {
+.yellow.darken-4, .darken-4.highlight {
   background-color: #f57f17 !important;
 }
 
@@ -1503,7 +1503,7 @@
   color: #f57f17 !important;
 }
 
-.yellow.accent-1 {
+.yellow.accent-1, .accent-1.highlight {
   background-color: #ffff8d !important;
 }
 
@@ -1511,7 +1511,7 @@
   color: #ffff8d !important;
 }
 
-.yellow.accent-2 {
+.yellow.accent-2, .accent-2.highlight {
   background-color: #ffff00 !important;
 }
 
@@ -1519,7 +1519,7 @@
   color: #ffff00 !important;
 }
 
-.yellow.accent-3 {
+.yellow.accent-3, .accent-3.highlight {
   background-color: #ffea00 !important;
 }
 
@@ -1527,7 +1527,7 @@
   color: #ffea00 !important;
 }
 
-.yellow.accent-4 {
+.yellow.accent-4, .accent-4.highlight {
   background-color: #ffd600 !important;
 }
 
@@ -1567,7 +1567,7 @@
   color: #ffe082 !important;
 }
 
-.amber.lighten-2 {
+.amber.lighten-2, .amber.highlight {
   background-color: #ffd54f !important;
 }
 
@@ -1679,7 +1679,7 @@
   color: #ffcc80 !important;
 }
 
-.orange.lighten-2 {
+.orange.lighten-2, .orange.highlight {
   background-color: #ffb74d !important;
 }
 
@@ -1791,7 +1791,7 @@
   color: #ffab91 !important;
 }
 
-.deep-orange.lighten-2 {
+.deep-orange.lighten-2, .deep-orange.highlight {
   background-color: #ff8a65 !important;
 }
 
@@ -1903,7 +1903,7 @@
   color: #bcaaa4 !important;
 }
 
-.brown.lighten-2 {
+.brown.lighten-2, .brown.highlight {
   background-color: #a1887f !important;
 }
 
@@ -1983,7 +1983,7 @@
   color: #b0bec5 !important;
 }
 
-.blue-grey.lighten-2 {
+.blue-grey.lighten-2, .blue-grey.highlight {
   background-color: #90a4ae !important;
 }
 
@@ -2063,7 +2063,7 @@
   color: #CFCFCF !important;
 }
 
-.grey.lighten-2, .lighten-2.dash-item.active, .lighten-2.dash-item:hover {
+.grey.lighten-2, .lighten-2.dash-item.active, .dash-item.active.highlight, .lighten-2.dash-item:hover, .dash-item.highlight:hover, .grey.highlight {
   background-color: #B6B6B6 !important;
 }
 
@@ -9204,6 +9204,18 @@ textarea ~ .error-block {
   }
 }
 
+.hero-2 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+@media only screen and (min-width: 601px) {
+  .hero-2 {
+    min-height: 500px;
+  }
+}
+
 .indigo-trans {
   /* Rectangle: */
   background: rgba(30, 28, 83, 0.64);
@@ -9218,6 +9230,27 @@ textarea ~ .error-block {
   z-index: 999999999999999999;
   position: absolute;
   width: 100%;
+}
+
+.animated-box {
+  width: 161px;
+  height: 295px;
+  margin: 0 auto;
+  background: url("https://s3.amazonaws.com/localstaffing-resources/images/coin_chest.png") left center no-repeat;
+  -webkit-animation: warlock-animation 1s steps(16) infinite;
+  animation: warlock-animation 1s steps(16) infinite;
+}
+
+@-webkit-keyframes warlock-animation {
+  100% {
+    background-position: -3300px;
+  }
+}
+
+@keyframes warlock-animation {
+  100% {
+    background-position: -3300px;
+  }
 }
 
 /* --------------------------------

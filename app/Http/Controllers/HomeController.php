@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+      if(Auth::user()->role == "enduser") {
+        return redirect('/dash');
+      }
         return view('home');
     }
 

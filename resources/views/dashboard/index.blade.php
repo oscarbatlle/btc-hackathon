@@ -8,10 +8,15 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/">HOME</a></li>
-        <li><a href="/">BITCOIN NEWS</a></li>
+        <li><a href="#bitcoinnews">BITCOIN NEWS</a></li>
         @if (Route::has('login'))
           @if (Auth::check())
               <a href="{{ url('/home') }}">DASH</a>
+              <a href="{{ url('/logout') }}"
+                  onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                  LOGOUT
+              </a>
           @else
               <a href="{{ url('/login') }}">LOGIN</a>
               <a href="{{ url('/register') }}">REGISTER</a>
@@ -20,7 +25,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="/">HOME</a></li>
-        <li><a href="/">BITCOIN NEWS</a></li>
+        <li><a href="#bitcoinnews">BITCOIN NEWS</a></li>
         @if (Route::has('login'))
           @if (Auth::check())
               <a href="{{ url('/home') }}">DASH</a>
@@ -31,6 +36,9 @@
         @endif
       </ul>
     </div>
+    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
   </div>
 </nav>
 </div>
@@ -69,6 +77,11 @@
                 <input type="password" id="password" name="password" style="background-color:#8887B6;border:0 solid;border-radius:3em;">
               </div>
               <div class="row">
+                <label for="passwordc" class="white-text ml-s--s">Confirm Password </label>
+                <input id="password-confirm" type="password" class="" name="password_confirmation" style="background-color:#8887B6;border:0 solid;border-radius:3em;" required>
+              </div>
+
+              <div class="row">
                 <button type="submit" class="btn-large--f mt-s--s pink lighten-1 waves-effect waves-light white-text" style="border-radius:3em;">Sign Up</button>
               </div>
           </form>
@@ -92,7 +105,8 @@
     <div class="row">
       <div class="container pt-l--s">
 
-        <h2 class="mb-l--s">Bitcoin in the News</h2>
+        <h2 class="mb-l--s" ><a id="#bitcoinnews"></a>Bitcoin in the News</h2>
+
         @foreach ($items as $item)
           <div class="item row mb-l--s article-post">
             <h4><a class="tw-normal black-text highlight" href="{{ $item->get_permalink() }}">{{ $item->get_title() }}</a></h4>

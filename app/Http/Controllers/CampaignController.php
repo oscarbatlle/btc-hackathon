@@ -16,6 +16,7 @@ class CampaignController extends Controller
 
     public function index()
     {
+
         if(Auth::user()->role == 'admin') {
             $campaigns = Campaign::all();
         } else {
@@ -65,5 +66,5 @@ class CampaignController extends Controller
 
         return back()->withStatus('Your campaign has been updated.');
     }
-    
+
 }

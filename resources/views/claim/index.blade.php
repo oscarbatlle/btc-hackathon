@@ -18,7 +18,7 @@
             </a>
           </div>
           <div class="col s7 pl-s--s">
-            <a id="continue-link" class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;">
+            <a id="continue-link" class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;" href="{{$campaign['url']}}">
               <i style="width:8px;background-color:#322a8c;height:8px;border-radius:4em;padding:1px 9px;" class="countdown mr-s--s"></i>Skip This <i class="material-icons" style="font-size:30px;">chevron_right</i>
             </a>
           </div>

@@ -1,4 +1,4 @@
-
+/*jshint esversion: 6 */
 /**
  * First we will load all of this project's JavaScript dependencies which
  * include Vue and Vue Resource. This gives a great starting point for
@@ -17,4 +17,15 @@ Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
     el: '#app'
+});
+
+$(document).ready(function(){
+    $('.trackmodal').on('click', function(){
+        var tracking_link = $(this).attr('data-value');
+        $('#trackinglink').val(tracking_link);
+    });
+    $("#trackingModal").on("hidden.bs.modal", function () {
+        $('#trackinglink').val(" ");
+    });
+
 });

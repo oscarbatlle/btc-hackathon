@@ -50,21 +50,24 @@
           <div class="row center-align">
             <h3 class="tw-bold white-text">Get Started Now</h3>
           </div>
-          <div class="row mt-m--s">
-            <label class=" white-text ml-s--s">Email </label>
-            <input type="text" name="fname" style="background-color:#8887B6;border:0 solid;border-radius:3em;">
-          </div>
-          <div class="row">
-            <label class=" white-text ml-s--s">First Name </label>
-            <input type="text" name="fname" style="background-color:#8887B6;border:0 solid;border-radius:3em;">
-          </div>
-          <div class="row">
-            <label class=" white-text ml-s--s">Last Name </label>
-            <input type="text" name="lname" style="background-color:#8887B6;border:0 solid;border-radius:3em;">
-          </div>
-          <div class="row">
-            <a href="" class="btn-large--f mt-s--s pink lighten-1 waves-effect waves-light white-text" style="border-radius:3em;">Sign Up</a>
-          </div>
+          <form action="/register" method="POST">
+            {{ csrf_field() }}
+              <div class="row mt-m--s">
+                <label for="email" class="white-text ml-s--s">Email </label>
+                <input type="text" id="email" name="email" style="background-color:#8887B6;border:0 solid;border-radius:3em;">
+              </div>
+              <div class="row">
+                <label for="name" class="white-text ml-s--s">Name </label>
+                <input type="text" id="name" name="name" style="background-color:#8887B6;border:0 solid;border-radius:3em;">
+              </div>
+              <div class="row">
+                <label for="password" class="white-text ml-s--s">Password </label>
+                <input type="password" id="password" name="password" style="background-color:#8887B6;border:0 solid;border-radius:3em;">
+              </div>
+              <div class="row">
+                <button type="submit" class="btn-large--f mt-s--s pink lighten-1 waves-effect waves-light white-text" style="border-radius:3em;">Sign Up</button>
+              </div>
+          </form>
         </div>
 
       </div>
@@ -83,9 +86,10 @@
         </div>
       </div>
     </div>
-    <script src="{{asset('js/datgui.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ asset('js/datgui.js') }}"></script>
     <script src="{{asset('js/smoothwave.js')}}">
     </script>
 </div>
+<img src="{{ URL('/track?aff_id=1&cmp=1') }}">
 @endsection

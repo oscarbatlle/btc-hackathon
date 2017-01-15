@@ -22,6 +22,7 @@
                                     <th>Status</th>
                                     <th>Daily Budget</th>
                                     <th>Payout</th>
+                                    <th>Type</th>
                                     <th>Clicks</th>
                                     <th>Conversions</th>
                                     <th>Tracking</th>
@@ -36,6 +37,7 @@
                                     <td>{{ ($campaign->status) ? 'Active' : 'Disabled' }}</td>
                                     <td>${{ $campaign->daily_budget }}</td>
                                     <td>${{ money_format('%i', $campaign->payout) }}</td>
+                                    <td>{{ $campaign->type }}</td>
                                     <td>{{ (isset($campaign->tracking()->first()->clicks)) ? $campaign->tracking()->first()->clicks : 'N/A' }}</td>
                                     <td>{{ (isset($campaign->tracking()->first()->conversions))? $campaign->tracking()->first()->conversions : 'N/A' }}</td>
                                     <td><button class="btn btn-default trackmodal" id="trackmodal" data-value="{{ URL::to('/track') }}?aff_id={{ $campaign->affiliate()->first()->id }}&cmp={{ $campaign->id }}" data-toggle="modal" data-target="#trackingModal">Get tracking</button></td>

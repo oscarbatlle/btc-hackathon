@@ -70,6 +70,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="wallet">Bitcoin Wallet</label>
+                            <input type="text" name="wallet" class="form-control" id="wallet">
+                        </div>
+
+                        <div class="form-group">
                             <label for="pwd">Password:</label>
                             <input type="password" name="password" class="form-control" id="pwd">
                         </div>

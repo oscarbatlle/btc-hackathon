@@ -6,6 +6,7 @@ use Hash;
 use App\Models\User;
 use App\Models\Affiliate;
 use Illuminate\Http\Request;
+use App\Models\AffiliateWallet;
 
 class AffiliateController extends Controller
 {
@@ -35,7 +36,7 @@ class AffiliateController extends Controller
             'password'  => Hash::make($request->input('password'))
         ]);
 
-        Affiliate::create([
+        $affiliate = Affiliate::create([
             'company'   => $request->input('company'),
             'address1'  => $request->input('address1'),
             'address2'  => $request->input('address2'),
@@ -44,8 +45,14 @@ class AffiliateController extends Controller
             'state'     => $request->input('state'),
             'zip'       => $request->input('zip'),
             'phone'     => $request->input('phone'),
+            'role'      => 'affiliate',
             'user_id'   => $user->id,
             'status'    => 1
+        ]);
+
+        AffiliateWallet::create([
+            'affiliate_id' => $affiliate->id,
+            'hash' => $request->input('wallet')
         ]);
 
         return redirect('/affiliates')->withStatus('Your Affiliate has been created.');

@@ -12,8 +12,21 @@ require('laravel-elixir-vue-2');
  | file for your application as well as publishing vendor resources.
  |
  */
-
+ var paths = {
+      'main' : 'resources/assets/js'
+ }
 elixir((mix) => {
     mix.sass('app.scss')
-       .webpack('app.js');
+    mix.sass('main.scss')
+
+    .webpack('app.js')
+    mix.scripts([
+       "/node_modules/jquery/dist/jquery.min.js",
+       "/node_modules/materialize-css/dist/js/materialize.min.js"
+    ],'public/js/vendor.js', './'),
+    mix.scripts([
+       paths.main + "/helpers.js",
+       paths.main + "/main.js"
+    ],'public/js/main.js', './')
+    .browserSync({proxy: 'bittastic.app'});
 });

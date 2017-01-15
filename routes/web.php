@@ -14,15 +14,13 @@ Route::get('/', 'DashboardController@index');
 
 Route::get('/dash', 'DashboardController@dash');
 
-
 Route::get('/claim/{affiliate_id}/{campaign_id}', 'ClaimController@index');
 
 Route::get('/interstitial', function () {
     return view('interstitial');
 });
-Route::get('/thankyou', function () {
-    return view('thankyou');
-});
+
+Route::get('/thankyou/{hash}', 'ClaimController@thankyou');
 
 
 /*

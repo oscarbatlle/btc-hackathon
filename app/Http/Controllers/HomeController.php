@@ -26,10 +26,4 @@ class HomeController extends Controller
         return view('home');
     }
 
-    // public function grab_wallet($id)
-    // {
-    //     $user = User::where("id", $id)->first();
-    //     return response()
-    //         ->json([ 'hash' => $user->wallet ]);
-    // }
 }

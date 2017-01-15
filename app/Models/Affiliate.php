@@ -15,7 +15,9 @@ class Affiliate extends Model
         'country',
         'state',
         'zip',
-        'phone'
+        'phone',
+        'role',
+        'status'
     ];
 
     /**
@@ -41,5 +43,11 @@ class Affiliate extends Model
     {
         return $this->hasOne('App\Models\ApiKey');
     }
+
+    public function wallet()
+    {
+        return $this->hasOne('App\Models\AffiliateWallet');
+    }
+    
     
 }

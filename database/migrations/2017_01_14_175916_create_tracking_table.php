@@ -16,8 +16,8 @@ class CreateTrackingTable extends Migration
         Schema::create('trackings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('campaign_id')->index();
-            $table->string('clicks');
-            $table->string('conversions');
+            $table->string('clicks')->nullable();
+            $table->string('conversions')->nullable();
             $table->timestamps();
         });
     }

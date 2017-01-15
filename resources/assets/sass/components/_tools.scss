@@ -1,0 +1,867 @@
+.border-left{
+   border-left:4px solid $primary-color;
+}
+.br-s{
+   border-radius:3px;
+}
+.br-m{
+   border-radius:6px;
+}
+
+.dash-item.active{
+   @extend .grey;
+   @extend .darken-2;
+}
+.dash-item{
+   &:hover{
+      @extend .grey;
+      @extend .darken-3;
+   }
+}
+
+.classic-list{
+   margin-left: 40px;
+   li{
+      list-style-type: disc !important;
+      counter-increment: d;
+   }
+}
+
+.classic-ordered-list{
+   li{
+      margin-bottom:10px;
+   }
+}
+
+
+.joblisting-color{
+   padding-bottom: $b-space-xl+15 !important;
+   @media #{$medium-and-up} {
+      padding-bottom: $b-space !important;
+   }
+}
+.joblisting-article{
+   margin-top:-100px;
+   @media #{$medium-and-up} {
+      margin-top:-200px;
+   }
+}
+
+.avatar-icon{
+   border-radius: 3em;
+   height: 50px;
+   width: 50px;
+   display: inline-block;
+   background-size: cover;
+   background-position: center center;
+   border: 3px solid #fff;
+   vertical-align: middle;
+}
+.avatar-preview{
+   border-radius:3em;height:200px;width:200px;background-size:cover;background-position:center center;
+}
+
+.inline-block{
+   display: inline-block;
+}
+
+.table{
+		display: table;
+		//border-collapse: collapse;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+}
+.just-table{
+	display: table;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.table-row{
+	display: table-row;
+}
+.table-cell{
+	display: table-cell;
+	width: 1%;
+	vertical-align: bottom;
+}
+.table-cell-f{
+	display: table-cell;
+	vertical-align: middle;
+	@media #{$medium-and-up}{
+		display: table-cell;
+		vertical-align: middle;
+	}
+	@media print{
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+.table-cell-f-left{
+
+	@media #{$medium-and-up}{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: left;
+	}
+}
+.table-cell-f-bottom{
+		text-align: center;
+	@media #{$medium-and-up}{
+		display: table-cell;
+		vertical-align: bottom;
+		text-align: left;
+	}
+}
+.table-cell-f-bottom-center{
+		text-align: center;
+	@media #{$medium-and-up}{
+		display: table-cell;
+		vertical-align: bottom;
+		text-align: center;
+	}
+}
+
+.q-subsection{
+   display:none;
+}
+.q-subsection.active{
+      display:block;
+      transition: opacity 1s ease-in-out;
+}
+
+.no-fluff{
+   margin:0;
+   padding:0;
+}
+
+.help-cursor{
+   cursor: help;
+}
+
+.font-scale-2{
+   font-size:16px;
+   p{
+      margin-top: 1em;
+   }
+}
+.font-scale-3{
+   font-size:20px;
+   p{
+      margin-top: 1em;
+   }
+}
+
+.doc-width{
+   max-width:800px;
+   margin: 0 auto;
+}
+.doc-container{
+   max-width:800px;
+   margin: 0 auto;
+   height:600px;
+   img{
+      width:100%;
+   }
+
+}
+.doc-container--a{
+   max-width:800px;
+   margin: 0 auto;
+   height:1000px;
+   img{
+      width:100%;
+   }
+
+}
+
+.doc-container-print{
+   margin: 0 auto;
+   font-size:17px !important;
+   font-family: 'lato', lato, serif;
+   max-width:900px;
+
+}
+
+.doc-container-print.watermark{
+   .doc-container-preview{
+      background-image: url(https://s3.amazonaws.com/localstaffing-resources/templatelegal/img/preview.png);
+   }
+   .doc-container-w9{
+      background-image: url(https://s3.amazonaws.com/localstaffing-resources/templatelegal/img/preview.png);
+   }
+}
+
+.doc-container-preview{
+   margin: 0 auto;
+   font-size:13px !important;
+   font-family: 'lato', lato, serif;
+   @extend .pa-l--m;
+   @extend .pt-xl--m;
+   @extend .pb-xl--m;
+   @extend .pa-m--s;
+   @extend .pt-l--s;
+   @extend .pb-l--s;
+
+   @extend .mt-m--s;
+   @extend .white;
+   @extend .font-scale-3;
+   @extend .mt-m--s;
+   @extend .z-depth-1;
+
+   @media #{$medium-and-up} {
+      max-width:750px;
+   }
+   @media print{
+      width:100% !important;
+      padding:0px 0 !important;
+      margin: 0 !important;
+      box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0);
+   }
+}
+.doc-container-w9{
+   margin: 0 auto;
+   font-size:13px !important;
+   font-family: 'lato', lato, serif;
+   @extend .pa-l--m;
+   @extend .pt-l--m;
+   @extend .pb-xl--m;
+   @extend .pa-m--s;
+   @extend .pt-l--s;
+   @extend .pb-l--s;
+   @extend .white;
+   @extend .font-scale-3;
+   @extend .mt-m--s;
+   @extend .z-depth-1;
+
+
+    width:800px;
+
+   @media print{
+      width:100% !important;
+      padding:0px 0 !important;
+      margin: 0 !important;
+      box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0);
+   }
+}
+
+
+.scroll-y{
+	overflow-y: scroll;
+}
+.scroll-x{
+	overflow-x: scroll;
+}
+
+
+ol.clauses{
+   list-style-type: decimal;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    counter-reset: clause;
+   li{
+      margin-left: 13px;
+      margin-top: 7px;
+      list-style-type: decimal;
+
+      ol{
+         -webkit-padding-start: 20px;
+         li{
+            list-style-type:none;
+            text-indent:-15px;
+            margin-left:15px;
+
+            &:before{
+               counter-increment: clause;
+               content: counter(clause, lower-alpha) ". ";
+            }
+         }
+      }
+   }
+   li > p{
+      &:first-child{
+         text-indent: 0px !important;
+      }
+   }
+}
+
+
+.clausr{
+   counter-reset: clause;
+   .clausz{
+      counter-reset: nestclause;
+      div{
+         ol{
+            -webkit-margin-before: 0em;
+            -webkit-margin-after: 0em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-padding-start: 0px;
+           li{
+               list-style-type: none;
+               text-indent: -26px;
+               margin-left: 30px;
+               margin-top: 10px;
+               &:before{
+                  counter-increment: clause;
+                  content: counter(clause, decimal) ". ";
+                  margin-right: 10px;
+               }
+               ol{
+                  -webkit-padding-start: 20px;
+                  li{
+                     list-style-type:none;
+                     text-indent:-15px;
+                     margin-left:15px;
+                     margin-top:10px;
+                     &:before{
+                        counter-increment: nestclause;
+                        content: counter(nestclause, lower-alpha) ". ";
+                     }
+                  }
+                  li.alphaclauseskip{
+                     list-style-type:none;
+                     text-indent:0px;
+                     margin-left:30px;
+                     &:before{
+                        display:none;
+                        counter-increment: clausexx;
+                        content: counter(clausexx, decimal);
+                     }
+                  }
+               }
+            }
+            li.clauseskip{
+               list-style-type:none;
+               text-indent:0px;
+               margin-left:28px;
+               &:before{
+                  display:none;
+                  counter-increment: clausedd;
+                  content: counter(claused, decimal);
+               }
+            }
+         }
+      }
+   }
+}
+
+
+
+
+
+         .num-clause{
+            -webkit-margin-before: 0em;
+            -webkit-margin-after: 0em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-padding-start: 0px;
+            counter-reset: nestclause;
+            li{
+               margin-top:10px;
+               list-style-type: none;
+               &:before{
+                  counter-increment: nestclause;
+                  content:  counter(nestclause, decimal)". ";
+                  font-weight: 900;
+               }
+               ol{
+                  -webkit-padding-start: 0px;
+                  counter-reset: subclause;
+                  li{
+                     margin-top:10px;
+                     margin-left:30px;
+                     list-style-type: none;
+                     &:before{
+                        counter-increment: subclause;
+                        content:  counter(nestclause, decimal)"." counter(subclause, decimal) "  ";
+                     }
+                     ol{
+                        -webkit-padding-start: 20px;
+                        counter-reset: alphaclause;
+                        li{
+                           list-style-type: none;
+                           &:before{
+                              counter-increment: alphaclause;
+                              content:  counter(alphaclause, lower-alpha)". ";
+                           }
+                        }
+                     }
+                     ol.triplenum{
+                        -webkit-padding-start: 20px;
+                        counter-reset: tripleclause;
+                        li{
+                           list-style-type: none;
+                           &:before{
+                              counter-increment: tripleclause;
+                              content:  counter(nestclause, decimal)"." counter(subclause, decimal) "." counter(tripleclause, decimal) ".";
+                           }
+                        }
+                     }
+                  }
+
+               }
+            }
+         }
+
+
+
+
+
+ol.step{
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    counter-reset: clause;
+   li{
+      list-style-type:none;
+      text-indent:-37px;
+      margin-left:35px;
+      margin-top: 16px;
+      &:before{
+         counter-increment: clause;
+         content: counter(clause, decimal);
+         background-color: #fff;
+         color: #009688;
+         margin-right: 12px;
+         padding: 3px 8px;
+         font-weight:900;
+         border-radius: 6em;
+
+      }
+      ol{
+         -webkit-padding-start: 20px;
+         li{
+            list-style-type:none;
+            text-indent:-15px;
+            margin-left:15px;
+
+            &:before{
+               counter-increment: clause;
+               content: counter(clause, lower-alpha) ". ";
+            }
+         }
+      }
+   }
+   li > p{
+      &:first-child{
+         text-indent: 0px !important;
+      }
+   }
+}
+
+
+.tab-pane{
+   display:none;
+}
+
+.tab-pane.active{
+   display:block;
+}
+
+.profile-photo-preview{
+   height: 150px;
+   width: 150px;
+   border-radius: 12em;
+   background-size: cover;
+   display: block;
+}
+.profile-photo-preview{
+   height: 150px;
+   width: 150px;
+   border-radius: 12em;
+   background-size: cover;
+   display: block;
+}
+.profile-notif{
+  height:40px;
+  width:40px;
+  background-size:cover;
+}
+
+
+.border-indigo{
+   border-left: 8px solid #3E4EB8;
+}
+.bb-thin{
+   border-bottom: 1px solid #cecece
+}
+
+.hover-grey{
+   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+   &:hover{
+      transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      background-color: #f1f1f1;
+   }
+}
+
+.lightblue-w-border{
+   background-color:#EFF8FF;
+   border:1px solid #C3E5FF;
+}
+
+.smaller-icon{
+   font-size:19px;
+}
+
+.circle-mask{
+   background-image:url(https://s3.amazonaws.com/localstaffing-resources/templatelegal/img/callcenter.png);width:90px;
+   height:90px;
+   display:block;
+   border-radius:10em;
+   background-size:cover;
+}
+
+.indent-icon{
+   width:50px;
+   display:inline-block;
+   float:left;
+}
+.indent-copy {
+    margin-left: 50px;
+}
+
+.accent-hr{
+   border: 1px solid #7388ff;
+}
+
+.tab-bar-esign{
+    position: fixed;
+    width: 100%;
+    z-index: 9999999;
+    height: 50px;
+}
+.modal.bottom-sheet.esign-modal{
+   height:100%;
+   max-height: 100%;
+   @media #{$large-and-up} {
+      height:400px;
+   }
+}
+
+.tabs.esign-modal{
+   .indicator{
+      height: 5px;
+      background-color: #FFC80A;
+   }
+}
+.modal-footer.esign-modal{
+   position: fixed;
+   bottom:0;
+   width:100%;
+   left:0;
+}
+
+.modal-content.esign-modal{
+   padding-top:50px;
+   padding-bottom:60px;
+   padding: 50px 0px 60px 0px;
+}
+
+.has-error{
+   label{
+      //color: color("red", "base") !important;
+   }
+   input{
+      border: 1px solid color("red", "base");
+   }
+}
+.error-list{
+   li{
+      list-style-type: disc;
+      padding: 3px;
+   }
+}
+
+input ~ .error-block{
+   background-color: color("red","base");
+    color: white;
+    padding: 3px;
+    margin-bottom: 10px;
+    display: block;
+    margin-top: -18px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    text-align: center;
+}
+textarea ~ .error-block{
+   background-color: color("red","base");
+    color: white;
+    padding: 3px;
+    margin-bottom: 10px;
+    display: block;
+    margin-top: -18px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    text-align: center;
+}
+
+.singleton.error-block{
+   background-color: color("red","base");
+    color: white;
+    padding: 3px;
+    margin-bottom: 10px;
+    display: block;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    text-align: center;
+}
+
+.modal{
+   &.no-constraint{
+   max-height:100% !important;
+   }
+}
+
+
+.sign-here{
+   border-radius: 3px;
+    height: 32px;
+    width: 300px;
+    padding: 3px;
+    background: #fff8b6;
+    display: inline-flex;
+    border: 1px solid #ece066;
+}
+
+.esign-footer{
+   position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/*bounce*/
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0)  ;
+  }
+	40% {
+   transform: translateY(-30px)  ;
+  }
+	60% {
+    transform: translateY(-15px) ;
+  }
+}
+
+.bounce {
+   @media #{$medium-and-up} {
+      -webkit-animation-name:bounce;
+      animation-name:bounce;
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+      -webkit-animation-iteration-count:2;
+      animation-iteration-count:2;
+      &:hover{
+          animation-name: s;
+      }
+   }
+}
+
+.hr-dashed{
+   border-top: dashed 1px;
+}
+
+
+/* Eviction Notice */
+.doc-tn-info {
+  padding-top: 45px;
+  margin-bottom: 25px;
+
+  .doc-tn-spacing {
+    display: block;
+    margin-bottom: 15px;
+  }
+}
+
+.doc-date-info {
+
+  .doc-date-spacing {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+}
+
+.doc-content-info {
+  padding-top: 25px;
+  line-height: 24px;
+}
+
+.doc-init-spacing {
+  display: inline-block;
+  width: 60px;
+}
+
+.doc-landlord-info {
+  width: 40%;
+  margin-left: auto;
+  margin-right: 60px;
+  padding-top: 25px;
+
+  .doc-ll-spacing {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .span-fix {
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,.5);
+  }
+}
+
+.doc-bottom-dates {
+  padding-top: 40px;
+
+  .doc-bd-spacing {
+    display: block;
+    margin-bottom: 35px;
+  }
+}
+
+
+#doc_table_paginate {
+    margin-top: 34px;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    width: 100% !important;
+}
+.dataTables_wrapper .dataTables_filter input {
+    width: 100% !important;
+}
+
+/* AutoMotive Bill Of Sale */
+.doc-abos-content {
+
+  h4 {
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+
+  .doc-top-text {
+    line-height: 25px;
+  }
+
+  .doc-bos-purchaser {
+    margin-top: 25px;
+    line-height: 25px;
+  }
+
+  .block-item {
+    display: block;
+  }
+
+  .doc-cert-info {
+    margin-bottom: 50px;
+
+    span {
+      line-height: 25px;
+    }
+  }
+
+  .blank-box {
+    padding: 0;
+    width: 12px;
+    min-height: 12px;
+    line-height: 8px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #000;
+    margin-right: 2px;
+  }
+
+}
+
+
+.bordered-table {
+
+    border-top: 1px solid #d0d0d0;
+    border-left: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    //border-right: 1px solid #d0d0d0;
+    th {
+      border-right: 1px solid #d0d0d0;
+      padding: 5px;
+    }
+
+    th.doc-table-year {
+      min-width: 50px;
+    }
+
+    th.doc-table-bt {
+      min-width: 100px;
+    }
+
+    th.doc-table-model {
+      min-width: 70px;
+    }
+
+    td {
+      border-right: 1px solid #d0d0d0;
+    }
+}
+
+.dash-chip{
+   padding: 2px 9px;
+    border-radius: 3px;
+}
+
+.mi-fix.material-icons{
+   line-height: inherit !important;
+}
+
+.hero{
+   background-image: linear-gradient(9deg, #9E6DFF 0%, #392FA9 70%);
+   @media #{$medium-and-up}{
+      min-height: 500px;
+   }
+}
+.hero-2{
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: bottom center;
+   @media #{$medium-and-up}{
+      min-height: 500px;
+   }
+}
+.indigo-trans{
+   /* Rectangle: */
+background: rgba(30,28,83,0.64);
+}
+
+.dg.ac{
+   display:none;
+}
+.decentralize-text{
+   margin-top: -94px;
+    z-index: 999999999999999999;
+    position: absolute;
+    width: 100%;
+}
+
+.animated-box {
+	width: 161px;
+    height: 295px;
+    margin: 0 auto;
+	// the imagery belongs to Blizzard Entertainment™
+	background: url('https://s3.amazonaws.com/localstaffing-resources/images/coin_chest.png') left center no-repeat;
+	animation: warlock-animation 1s steps(16) infinite;
+}
+
+@keyframes warlock-animation {
+	100% { background-position: -3300px; }
+}
+
+
+
+.highlight{
+   @extend .yellow;
+   @extend .lighten-2;
+}

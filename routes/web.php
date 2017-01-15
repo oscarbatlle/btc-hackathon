@@ -10,15 +10,42 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'DashboardController@index');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/interstitial', function () {
+    return view('interstitial');
+});
+Route::get('/thankyou', function () {
+    return view('thankyou');
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| Tracking routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/track', 'TrackingController@track');
+Route::get('/reward', 'TrackingController@reward');
+
+/*
+|--------------------------------------------------------------------------
+| Auth routes
+|--------------------------------------------------------------------------
+*/
 Auth::routes();
 
+/*
+|--------------------------------------------------------------------------
+| Home routes
+|--------------------------------------------------------------------------
+*/
 Route::get('/home', 'HomeController@index');
+
 //Route::get('/alexa/wallet/{id}', 'HomeController@grab_wallet');
+
+Route::get('/test', 'TrackingController@test');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +60,9 @@ Route::resource('/affiliates', 'AffiliateController');
 |--------------------------------------------------------------------------
 */
 Route::resource('/campaigns', 'CampaignController');
+
+/*
+|--------------------------------------------------------------------------
+| Coinbase routes
+|--------------------------------------------------------------------------
+*/

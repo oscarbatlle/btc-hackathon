@@ -18,6 +18,7 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
+                                    <th>Bitcoin Wallet</th>
                                     <th>Status</th>
                                     <th>Campaigns</th>
                                 </tr>
@@ -26,6 +27,7 @@
                                 @foreach($affiliates as $affiliate)
                                 <tr>
                                     <td>{{ $affiliate->company }}</td>
+                                    <td>{{ $affiliate->wallet()->first()->hash }}</td>
                                     <td>{{ ($affiliate->status) ? 'Active' : 'Disabled'}}</td>
                                     <td>{{ $affiliate->campaign()->count() }}</td>
                                 </tr>

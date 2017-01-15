@@ -38,14 +38,14 @@
                   </div>
                   <div class="col s5">
                      <div class="row  center-align">
-                        <h3>BTC 5.0323</h3>
-                        <p class="pink-text">USD 4,4994.57</p>
+                        <h3>BTC 0.000221</h3>
+                        <p class="pink-text">USD 0.18</p>
                      </div>
                   </div>
                </div>
                <div class="row mt-m--m">
                   <h4>Wallet Address</h4>
-                  <input type="text" style="width:100%;" value="928d9v6ssd86zxz90jmsdalk99s9">
+                  <input type="text" style="width:100%;" value="{{ $wallet->hash }}">
                </div>
             </div>
             <div class="row white z-depth-2 pa-m--s mt-m--m">
@@ -64,25 +64,15 @@
                   <table class="striped">
                      <thead>
                         <tr>
-                           <th data-field="id">Name</th>
-
-                           <th data-field="price">Item Price</th>
+                           <th data-field="price">Payout</th>
                         </tr>
                      </thead>
-
                      <tbody>
+                        @foreach($transactions as $transaction)
                         <tr>
-                           <td>Alvin</td>
-                           <td>$0.87</td>
+                           <td>$ {{ $transaction->amount }}</td>
                         </tr>
-                        <tr>
-                           <td>Alan</td>
-                           <td>$3.76</td>
-                        </tr>
-                        <tr>
-                           <td>Jonathan</td>
-                           <td>$7.00</td>
-                        </tr>
+                        @endforeach
                      </tbody>
                   </table>
                </div>

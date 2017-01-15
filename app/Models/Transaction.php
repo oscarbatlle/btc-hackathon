@@ -13,4 +13,10 @@ class Transaction extends Model
         'wallet',
         'amount'
     ];
+
+    public function campaign()
+    {
+        return $this->hasMany('App\Models\Campaign');
+    }
+    
 }

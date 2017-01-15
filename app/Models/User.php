@@ -35,5 +35,17 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\Affiliate');
     }
+
+    public function enduserwallet()
+    {
+        return $this->hasOne('App\Models\EndUserWallet');
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany('App\Models\Transaction');
+    }
+    
+    
     
 }

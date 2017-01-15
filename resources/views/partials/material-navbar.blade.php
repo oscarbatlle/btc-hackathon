@@ -9,7 +9,7 @@
         <li><a href="/">BIT COIN NEWS</a></li>
         @if (Route::has('login'))
           @if (Auth::check())
-              <a href="{{ url('/home') }}">DASH/a>
+              <a href="{{ url('/home') }}">DASH</a>
           @else
               <a href="{{ url('/login') }}">LOGIN</a>
               <a href="{{ url('/register') }}">REGISTER</a>
@@ -18,10 +18,10 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="/">HOME</a></li>
-        <li><a href="/">BIT COIN NEWS</a></li>
+        <li><a href="/">BITCOIN NEWS</a></li>
         @if (Route::has('login'))
           @if (Auth::check())
-              <a href="{{ url('/home') }}">DASH/a>
+              <a href="{{ url('/home') }}">DASH</a>
           @else
               <a href="{{ url('/login') }}">LOGIN</a>
               <a href="{{ url('/register') }}">REGISTER</a>

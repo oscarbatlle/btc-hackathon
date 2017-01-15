@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -50,8 +50,12 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+    protected function authenticated($request, $user)
+    {
+        if($user->role === 'enduser') {
+            return redirect()->intended('/dash');
+        }
 
-
-
-
+        return redirect()->intended('/home');
+    }
 }

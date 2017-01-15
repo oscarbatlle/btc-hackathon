@@ -823,6 +823,14 @@ textarea ~ .error-block{
       min-height: 500px;
    }
 }
+.hero-2{
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: bottom center;
+   @media #{$medium-and-up}{
+      min-height: 500px;
+   }
+}
 .indigo-trans{
    /* Rectangle: */
 background: rgba(30,28,83,0.64);
@@ -836,4 +844,17 @@ background: rgba(30,28,83,0.64);
     z-index: 999999999999999999;
     position: absolute;
     width: 100%;
+}
+
+.animated-box {
+	width: 161px;
+    height: 295px;
+    margin: 0 auto;
+	// the imagery belongs to Blizzard Entertainment™
+	background: url('https://s3.amazonaws.com/localstaffing-resources/images/coin_chest.png') left center no-repeat;
+	animation: warlock-animation 1s steps(16) infinite;
+}
+
+@keyframes warlock-animation {
+	100% { background-position: -3300px; }
 }

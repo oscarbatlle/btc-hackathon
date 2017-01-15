@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+/*
+|--------------------------------------------------------------------------
+| Affiliates routes
+|--------------------------------------------------------------------------
+*/
+Route::resource('/affiliates', 'AffiliateController');
+
+/*
+|--------------------------------------------------------------------------
+| Campaigns routes
+|--------------------------------------------------------------------------
+*/
+Route::resource('/campaigns', 'CampaignController');

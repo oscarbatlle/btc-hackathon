@@ -42,16 +42,14 @@
         </div>
         <div class="col s12 m4  offset-m2 mt-l--s  z-depth-1">
           <div class="row white center-align pt-s--s" style="border-top-right-radius:4px;border-top-left-radius:4px;">
-            <h2 class="h1 tw-light">Free Money</h2>
+            <h2 class="h1 tw-light">Claim Reward</h2>
+            
             <div class="row">
-                <img src="{{asset('images/qr.svg')}}" width="160">
-            </div>
-            <div class="row">
-              <p>(inside this code there is bitcoin)</p>
+              <p>Reward Amount: $0.05 or 0.00012 ฿ </p>
             </div>
             <div class="row pl-s--s pr-s--s pb-s--s pt-s--s">
               <a class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;">
-                Get Bitcoin! <i class="material-icons" style="font-size:30px;">chevron_right</i>
+                Claim Your Reward! <i class="material-icons" style="font-size:30px;">chevron_right</i>
               </a>
             </div>
           </div>
@@ -73,9 +71,9 @@
         <img src="{{asset('images/merchant-card.svg')}}">
     </div>
     <div class="col s12 m6 pa-m--m pa-s--s">
-      <h3 class="deep-purple-text">You’ve heard about bitcoin</h3>
-      <p>Now is your chance to own some bitcoin! We partnered with Social Influencers, and merchants to bring to you a piece of bit coin. Follow the link below to access your own piece of bit coin. There are some huge advantages to bit coin and you don't want to be left out.</p>
-      <a href="" class="btn deep-purple darken-3 white-text mt-m--s">Get Bitcoin</a>
+      <h3 class="deep-purple-text">You’ve heard about Bitcoin</h3>
+      <p>Now is your chance to own some!  Follow the link below to claim your reward.</p>
+      <a href="" class="btn deep-purple darken-3 white-text mt-m--s">฿ Claim Reward</a>
     </div>
   </div>
 </div>

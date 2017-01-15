@@ -19,6 +19,10 @@ class DashboardController extends Controller
        );
 
        $channel = $feed->get_feed_tags('', 'channel');
-      return view('dashboard.index',$data);    
+      return view('dashboard.index',$data);
+    }
+    public function dash(){
+
+      return view('dashboard.dash');    
     }
 }

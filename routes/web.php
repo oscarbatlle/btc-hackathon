@@ -12,6 +12,8 @@
 */
 Route::get('/', 'DashboardController@index');
 
+Route::get('/dash', 'DashboardController@dash');
+
 
 Route::get('/claim/{affiliate_id}/{campaign_id}', 'ClaimController@index');
 

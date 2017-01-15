@@ -11,7 +11,7 @@
          </ul>
       </div>
       <div style="width:20%;float:left;height:100vh;background-color:#1F2740;">
-
+         <div id="dashboard">
             <a href="wallet" data-navigo>
                <div id="wallet-init" style="width:100%;" class="pa-l--s center-align white-text sub-dash-navis active ">
                   WALLET
@@ -22,6 +22,12 @@
                   MY ACCOUNT
                </div>
             </a>
+            <a href="atm" data-navigo>
+               <div id="atm-init" style="width:100%;" class="pa-l--s center-align white-text sub-dash-navis">
+                  FIND AN ATM
+               </div>
+            </a>
+         </div>
       </div>
       <div style="width:55%;float:left;height:100vh;background-color:#F3F3F3;" >
          <div id="wallet" class="hide pa-m--s">
@@ -85,6 +91,13 @@
          <div id="account" class="hide">
             hi
          </div>
+         <div id="atm" class="hide">
+            <div class="row pa-m--s z-depth-1">
+               <div class="video-container">
+                  <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=bitstop&key=AIzaSyBtbZ0_FRp0pQ6Puh0PNYv5pkrKN4MxY8w" allowfullscreen></iframe>
+               </div>
+            </div>
+         </div>
       </div>
    </div>
 @section("specialjs")
@@ -99,8 +112,8 @@
          router
           .on(":id", function(params) {
               console.log(params);
-              $("#wallet, #account").addClass("hide");
-              $("#wallet-init, #account-init").removeClass("active");
+              $("#wallet, #account,#atm").addClass("hide");
+              $("#wallet-init, #account-init,#atm-init").removeClass("active");
               $(params.id).removeClass("hide");
               $(params.id+"-init").addClass("active");
           })

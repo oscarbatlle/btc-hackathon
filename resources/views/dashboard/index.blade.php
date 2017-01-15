@@ -91,7 +91,6 @@
     </div>
     <div class="row">
       <div class="container pt-l--s">
-
         <h2 class="mb-l--s">Bitcoin in the News</h2>
         @foreach ($items as $item)
           <div class="item row mb-l--s article-post">

@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'DashboardController@index');
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,6 +22,8 @@ Route::get('/interstitial', function () {
 Route::get('/thankyou', function () {
     return view('thankyou');
 });
+=======
+>>>>>>> 2aaa206edcffa1f27671fb7b03ac8de0606d5b92
 
 Auth::routes();
 

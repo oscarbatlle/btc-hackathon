@@ -24,10 +24,11 @@ Route::get('/home', 'HomeController@index');
 | Affiliates routes
 |--------------------------------------------------------------------------
 */
-Route::get('/affiliates', 'AffiliateController@index');
+Route::resource('/affiliates', 'AffiliateController');
 
 /*
 |--------------------------------------------------------------------------
 | Campaigns routes
 |--------------------------------------------------------------------------
 */
+Route::resource('/campaigns', 'CampaignController');

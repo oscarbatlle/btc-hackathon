@@ -865,3 +865,20 @@ background: rgba(30,28,83,0.64);
    @extend .yellow;
    @extend .lighten-2;
 }
+
+.dash-navis{
+   &:hover{
+      background-color:#46578D;
+   }
+}
+.sub-dash-navis{
+   &:hover{
+      background-color:#46578D;
+   }
+}
+.dash-navis.active{
+   background-color:#46578D;
+}
+.sub-dash-navis.active{
+   border-left: 3px solid #FF4081;
+}

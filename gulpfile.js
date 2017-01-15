@@ -22,7 +22,8 @@ elixir((mix) => {
     .webpack('app.js')
     mix.scripts([
        "/node_modules/jquery/dist/jquery.min.js",
-       "/node_modules/materialize-css/dist/js/materialize.min.js"
+       "/node_modules/materialize-css/dist/js/materialize.min.js",
+       "/node_modules/navigo/lib/navigo.min.js"
     ],'public/js/vendor.js', './'),
     mix.scripts([
        paths.main + "/helpers.js",

@@ -9253,6 +9253,22 @@ textarea ~ .error-block {
   }
 }
 
+.dash-navis:hover {
+  background-color: #46578D;
+}
+
+.sub-dash-navis:hover {
+  background-color: #46578D;
+}
+
+.dash-navis.active {
+  background-color: #46578D;
+}
+
+.sub-dash-navis.active {
+  border-left: 3px solid #FF4081;
+}
+
 /* --------------------------------
 
 Basic Style

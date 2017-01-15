@@ -17,6 +17,15 @@
     @yield('content')
     <script src="{{ asset('/js/vendor.js') }}"></script>
     <script src="{{ asset('/js/main.js') }}"></script>
+    <script src="{{ asset('/js/Bittastic.js') }}"></script>
+
     @yield('specialjs')
+
+    <script type="text/javascript">
+    $( document ).ready(function() {
+        @yield('onReady_Scripts')
+          
+    });
+    </script>    
 </body>
 </html>

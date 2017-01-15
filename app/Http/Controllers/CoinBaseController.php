@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+use Curl;
+use View;
 use App\Models\EndUserWallet;
 use App\Models\Transaction;
 use Coinbase\Wallet\Client;
@@ -48,34 +51,45 @@ class CoinBaseController extends Controller
      * Send Money
      * Pay customers from primary account
      */
-    public function sendTransaction()
+    public function sendTransaction(Request $request,$affiliate_id,$campaign_id)
     {
-        $configuration = Configuration::apiKey(env('COINBASE_API_KEY'), env('COINBASE_API_SECRET'));
-        $client = Client::create($configuration);
+        // $configuration = Configuration::apiKey(env('COINBASE_API_KEY'), env('COINBASE_API_SECRET'));
+        // $client = Client::create($configuration);
+        // $btc_current = $this->grab_currency_value('USD');
 
-        $amount = '0.10';
+        // $amount = '0.10';//Hardcoded for now.
 
-        $account = $client->getPrimaryAccount();
-        $enduser = EndUserWallet::where('user_id', 7)->first();
+        // $account = $client->getPrimaryAccount();
+        // $user = Auth::user();
 
-        $transaction = CTransaction::send([
-            'toBitcoinAddress' => $enduser['hash'],
-            'amount'           =>  new Money($amount, CurrencyCode::USD),
-            'description'      => 'Reward message',
-            'fee'              => '0.0001' // only required for transactions under BTC0.0001
-        ]);
+        // $enduser = EndUserWallet::where('user_id', $user->id)->first();
 
-        $client->createAccountTransaction($account, $transaction);
+        // $transaction = CTransaction::send([
+        //     'toBitcoinAddress' => $enduser['hash'],
+        //     'amount'           =>  new Money($amount, CurrencyCode::USD),
+        //     'description'      => 'Reward message',
+        //     'fee'              => '0.0001' // only required for transactions under BTC0.0001
+        // ]);
 
-        Transaction::create([
-            'user_id'     => 7,
-            'campaign_id' => 1,
-            'type'        => 'cpc',
-            'wallet'      => $enduser['hash'],
-            'amount'      => $amount
-        ]);
+        // $client->createAccountTransaction($account, $transaction);
 
-        return response()->json(['status', 'success', 'transaction' => $transaction], 200);
+        // Transaction::create([
+        //     'user_id'     => $user->id,
+        //     'campaign_id' => $campaign_id,
+        //     'type'        => 'cpc',
+        //     'wallet'      => $enduser['hash'],
+        //     'amount'      => $amount,
+        //     'amount_btc'      => $amount/$btc_current['last']
+
+        // ]);
+        if($request->input('thankyou')){
+            return redirect('/thanks/'.$affiliate_id.'/'.$campaign_id);
+        }else{
+            return redirect('/dash');
+    
+        }
+        
+       // return response()->json(['status', 'success', 'transaction' => $transaction], 200);
     }
 
     /**
@@ -84,11 +98,26 @@ class CoinBaseController extends Controller
      */
     public function getBalance()
     {
-        $this->client->refreshAccount($primaryAccount);
+        $configuration = Configuration::apiKey(env('COINBASE_API_KEY'), env('COINBASE_API_SECRET'));
+        $client = Client::create($configuration);
+
+        $primaryAccount = $client->getPrimaryAccount();   
+        dd($primaryAccount);
+             
+        $client->refreshAccount($primaryAccount);
 
         $balance = $primaryAccount->getBalance();
 
         return response()->json(['status' => 'success', 'balance' => $balance], 200);
+    }
+
+    public static function grab_currency_value($currency = null) {
+      $response = Curl::to('https://blockchain.info/ticker')->get();
+      $response = json_decode($response, true);
+      if($currency != null && isset($response[$currency])){
+        return $response[$currency];
+      }
+      return $response;
     }
 
 }

@@ -15,14 +15,12 @@ Route::get('/', 'DashboardController@index');
 Route::get('/dash', 'DashboardController@dash');
 
 Route::get('/claim/{affiliate_id}/{campaign_id}', 'ClaimController@index');
+Route::get('/reward/{affiliate_id}/{campaign_id}', 'ClaimController@reward');
+Route::get('/thanks/{affiliate_id}/{campaign_id}', 'ClaimController@thanks');
 
-Route::get('/interstitial', function () {
-    return view('interstitial');
-});
 
-Route::get('sendmoney', 'CoinBaseController@sendTransaction');
+Route::get('success/{affiliate_id}/{campaign_id}/', 'CoinBaseController@sendTransaction');
 
-Route::get('/thankyou/{hash}', 'ClaimController@thankyou');
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +68,5 @@ Route::resource('/campaigns', 'CampaignController');
 | Coinbase routes
 |--------------------------------------------------------------------------
 */
+Route::get('/wallet/current', 'CoinBaseController@getBalance');
+

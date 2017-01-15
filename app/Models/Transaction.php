@@ -11,12 +11,14 @@ class Transaction extends Model
         'campaign_id',
         'type',
         'wallet',
-        'amount'
+        'amount',
+        'amount_btc'
+
     ];
 
     public function campaign()
     {
-        return $this->hasMany('App\Models\Campaign');
+        return $this->belongsTo('App\Models\Campaign');
     }
     
 }

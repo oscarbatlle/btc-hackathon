@@ -53,7 +53,7 @@ class CoinBaseController extends Controller
         $configuration = Configuration::apiKey(env('COINBASE_API_KEY'), env('COINBASE_API_SECRET'));
         $client = Client::create($configuration);
 
-        $amount = '0.01';
+        $amount = '0.10';
 
         $account = $client->getPrimaryAccount();
         $enduser = EndUserWallet::where('user_id', 7)->first();
@@ -61,7 +61,7 @@ class CoinBaseController extends Controller
         $transaction = CTransaction::send([
             'toBitcoinAddress' => $enduser['hash'],
             'amount'           =>  new Money($amount, CurrencyCode::USD),
-            'description'      => 'Your first bitcoin!',
+            'description'      => 'Reward message',
             'fee'              => '0.0001' // only required for transactions under BTC0.0001
         ]);
 
@@ -72,7 +72,7 @@ class CoinBaseController extends Controller
             'campaign_id' => 1,
             'type'        => 'cpc',
             'wallet'      => $enduser['hash'],
-            'amount'      => $$amount
+            'amount'      => $amount
         ]);
 
         return response()->json(['status', 'success', 'transaction' => $transaction], 200);

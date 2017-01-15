@@ -108,8 +108,8 @@
           <img src="{{asset('images/logo-dark.svg')}}" width="200">
       </div>
     </div>
-    <script src="{{asset('js/datgui.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{asset('js/datgui.js')}}"></script>
     <script src="{{asset('js/smoothwave.js')}}">
     </script>
 </div>

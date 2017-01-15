@@ -1,8 +1,5 @@
 @extends('layouts.display')
 @section('content')
-
-
-
 <div style="background-color:#463ACA;" class="z-depth-1 pb-s--s">
   <div class="container">
     <div class="row">

@@ -12,8 +12,6 @@
 */
 Route::get('/', 'DashboardController@index');
 
-
-
 Route::get('/interstitial', function () {
     return view('interstitial');
 });

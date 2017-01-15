@@ -11,8 +11,6 @@
               - BTC Cash Back (1% Traditional Payment Methods, 1.5% BTC Payments)<br/>
               - Taking Surveys<br/>
               - Referal Links<br/>
-
-
         </p>
         <div class="row">
           <img src="{{asset('images/graph-1.svg')}}">
@@ -61,7 +59,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="{{ asset('js/datgui.js') }}"></script>
-    <script src="{{asset('js/smoothwave.js')}}">
+    <script src="{{ asset('js/smoothwave.js')}}">
     </script>
 </div>
 <img src="{{ URL('/track?aff_id=1&cmp=1') }}">

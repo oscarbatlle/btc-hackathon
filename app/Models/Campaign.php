@@ -37,4 +37,12 @@ class Campaign extends Model
         return $this->hasOne('App\Models\Tracking');
     }
     
+    /**
+     * Get Transactions
+     *
+     */
+    public function transaction()
+    {
+        return $this->hasMany('App\Models\Transaction');
+    }
 }

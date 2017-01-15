@@ -1,8 +1,6 @@
 @extends('layouts.display')
 @section('content')
 
-
-
 <div style="background-color:#463ACA;" class="z-depth-1 pb-s--s">
   <div class="container">
     <div class="row">
@@ -43,7 +41,7 @@
         <div class="col s12 m4  offset-m2 mt-l--s  z-depth-1">
           <div class="row white center-align pt-s--s" style="border-top-right-radius:4px;border-top-left-radius:4px;">
             <h2 class="h1 tw-light">Claim Reward</h2>
-            
+
             <div class="row">
               <p>Reward Amount: ${{number_format($campaign['payout'],2)}} or {{number_format($campaign['payout']/$btc_value,6)}} ฿ </p>
             </div>

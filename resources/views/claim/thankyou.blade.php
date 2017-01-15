@@ -13,8 +13,13 @@
             <div class="row pa-m--m pa-s--s white mt-xl--s z-depth-2">
                <h2 class="deep-purple-text text-darken-4">Claim your Bitcoin </h2>
                <img src="{{asset('images/qr.svg')}}" width="160">
-               <h4> ฿ 0.0012 </h4>
-               <input type="text" value="1933phfhK3ZgFQNLGSDXvqCn32k2buXY8a">
+               <h4> ฿ {{ $data['amount'] }} </h4>
+               <input type="text" value="{{ $data['hash'] }}">
+            </div>
+            <div class="row pl-s--s pr-s--s pb-s--s pt-s--s">
+              <a class="btn purple accent-2 tw-ultrabold white-text" style="width:100%;">
+                Claim Your Reward! <i class="material-icons" style="font-size:30px;">chevron_right</i>
+              </a>
             </div>
          </div>
       </div>

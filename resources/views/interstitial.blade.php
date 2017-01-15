@@ -29,35 +29,35 @@
   <div class="container">
     <div class="row">
 
-        <div class="col s12 m5 pt-l--s">
+      <div class="col s12 m5 pt-l--s">
+        <div class="row">
+          <img src="{{asset('images/woah.svg')}}">
+        </div>
+        <div class="row">
+          <div class="animated-box"></div>
+        </div>
+      </div>
+      <div class="col s12 m4  offset-m2 mt-l--s  z-depth-1">
+        <div class="row white center-align pt-s--s" style="border-top-right-radius:4px;border-top-left-radius:4px;">
+          <h2 class="h1 tw-light">Claim Reward</h2>
+
           <div class="row">
-              <img src="{{asset('images/woah.svg')}}">
+            <p>Reward Amount: $0.05 or 0.00012 ฿ </p>
           </div>
-          <div class="row">
-            <div class="animated-box"></div>
+          <div class="row pl-s--s pr-s--s pb-s--s pt-s--s">
+            <a class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;">
+              Claim Your Reward! <i class="material-icons" style="font-size:30px;">chevron_right</i>
+            </a>
           </div>
         </div>
-        <div class="col s12 m4  offset-m2 mt-l--s  z-depth-1">
-          <div class="row white center-align pt-s--s" style="border-top-right-radius:4px;border-top-left-radius:4px;">
-            <h2 class="h1 tw-light">Claim Reward</h2>
-            
-            <div class="row">
-              <p>Reward Amount: $0.05 or 0.00012 ฿ </p>
-            </div>
-            <div class="row pl-s--s pr-s--s pb-s--s pt-s--s">
-              <a class="btn deep-purple accent-2 tw-ultrabold white-text" style="width:100%;">
-                Claim Your Reward! <i class="material-icons" style="font-size:30px;">chevron_right</i>
-              </a>
-            </div>
-          </div>
-          <div class=" pa-m--m pa-s--s" style="background-color:#5E4EFF;">
-            <div class="row pa-s--s white-text" style="border:1px solid #fff;">
-              <h4>New to Bitcoin?</h4>
-              <p>This is real money! (maybe not a lot) but it is still holds real monetary value. Meaning YOU CAN BUY stuff. </p>
-              <p>Why are we doing this you may ask? The creator of the link is giving you a reward to visit their…</p>
-            </div>
+        <div class=" pa-m--m pa-s--s" style="background-color:#5E4EFF;">
+          <div class="row pa-s--s white-text" style="border:1px solid #fff;">
+            <h4>New to Bitcoin?</h4>
+            <p>This is real money! (maybe not a lot) but it is still holds real monetary value. Meaning YOU CAN BUY stuff. </p>
+            <p>Why are we doing this you may ask? The creator of the link is giving you a reward to visit their…</p>
           </div>
         </div>
+      </div>
 
     </div>
   </div>
@@ -65,7 +65,7 @@
 <div class="row mt-m--s">
   <div class="container">
     <div class="col s12 m6">
-        <img src="{{asset('images/merchant-card.svg')}}">
+      <img src="{{asset('images/merchant-card.svg')}}">
     </div>
     <div class="col s12 m6 pa-m--m pa-s--s">
       <h3 class="deep-purple-text">You’ve heard about Bitcoin</h3>
@@ -76,16 +76,16 @@
 </div>
 <div class="row">
   <div class="container pa-xl--l mt-xl--l mt-xl--s  mb-l--s center-align">
-      <img src="{{asset('images/logo-dark.svg')}}" width="200">
+    <img src="{{asset('images/logo-dark.svg')}}" width="200">
   </div>
 </div>
 @endsection
 @section('specialjs')
 <script>
-  var time = 30,
-    display = $('.countdown'), seconds;
+var time = 30,
+display = $('.countdown'), seconds;
 
-  var timer = function(){
+var timer = function(){
   seconds = parseInt(time % 60);
   seconds = (seconds < 10) ? "0" + seconds : seconds;
 
@@ -99,8 +99,8 @@
     timer = 0;
     //window.location.href = "https://google.com";
   }
-  };
+};
 
-  setInterval(timer, 1000);
+setInterval(timer, 1000);
 </script>
 @endsection

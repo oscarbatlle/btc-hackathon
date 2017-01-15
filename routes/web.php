@@ -12,14 +12,13 @@
 */
 Route::get('/', 'DashboardController@index');
 
+Route::get('/claim/{affiliate_id}/{campaign_id}', 'ClaimController@index');
+
 Route::get('/interstitial', function () {
     return view('interstitial');
 });
 
-Route::get('/thankyou', function () {
-    return view('thankyou');
-});
-
+Route::get('/thankyou/{hash}', 'ClaimController@thankyou');
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +41,11 @@ Auth::routes();
 |--------------------------------------------------------------------------
 */
 Route::get('/home', 'HomeController@index');
+
+//Route::get('/alexa/wallet/{id}', 'HomeController@grab_wallet');
+
 Route::get('/test', 'TrackingController@test');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,4 +66,3 @@ Route::resource('/campaigns', 'CampaignController');
 | Coinbase routes
 |--------------------------------------------------------------------------
 */
-

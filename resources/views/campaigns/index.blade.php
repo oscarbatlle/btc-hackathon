@@ -38,7 +38,7 @@
                                     <td>${{ money_format('%i', $campaign->payout) }}</td>
                                     <td>{{ (isset($campaign->tracking()->first()->clicks)) ? $campaign->tracking()->first()->clicks : 'N/A' }}</td>
                                     <td>{{ (isset($campaign->tracking()->first()->conversions))? $campaign->tracking()->first()->conversions : 'N/A' }}</td>
-                                    <td><button class="btn btn-default trackmodal" id="trackmodal" data-value="{{ URL::to('/') }}?aff_id={{ $campaign->affiliate()->first()->id }}&cmp={{ $campaign->id }}" data-toggle="modal" data-target="#trackingModal">Get tracking</button></td>
+                                    <td><button class="btn btn-default trackmodal" id="trackmodal" data-value="{{ URL::to('/track') }}?aff_id={{ $campaign->affiliate()->first()->id }}&cmp={{ $campaign->id }}" data-toggle="modal" data-target="#trackingModal">Get tracking</button></td>
                                     <td><div class="row"><div class="col-md-6"><a target="_blank" href="/campaigns/{{ $campaign->id }}"><button class="btn btn-default">View</button></a></div><div class="col-md-6"><a target="_blank" href="/campaigns/{{ $campaign->id }}/edit"><button class="btn btn-default">Edit</button></a></div></div></td>
                                 </tr>
                                 @endforeach

@@ -9,7 +9,7 @@
     <title>@yield('title', 'Bitastic - Friendly Affiliate with Bitcoin')</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
 
 
 </head>

@@ -89,6 +89,18 @@
         </div>
       </div>
     </div>
+    <div class="row">
+
+  @foreach ($items as $item)
+
+    <div class="item">
+      <h2><a href="{{ $item->get_permalink() }}">{{ $item->get_title() }}</a></h2>
+           <p><?php print_R($item->get_description());?></p>
+
+      <p><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
+    </div>
+  @endforeach
+    </div>
     <script src="{{asset('js/datgui.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="{{asset('js/smoothwave.js')}}">

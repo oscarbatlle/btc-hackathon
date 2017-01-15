@@ -26,17 +26,43 @@
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <!-- <li><a href="{{ url('/register') }}">Register</a></li> -->
                 @else
                     <li>
-                        <a href="#" role="button" aria-expanded="false">
-                            Campaigns
+                        <a href="/campaigns" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Campaigns <span class="caret"></span>
                         </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="/campaigns">
+                                    Manage Campaigns
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/campaigns/create">
+                                    Create Campaign
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#" role="button" aria-expanded="false">
-                            Affiliates
+                    <li class="dropdown">
+                        @if(Auth::user()->role == 'admin')
+                        <a href="/affiliates" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Affiliates <span class="caret"></span>
                         </a>
+                        @endif
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="/affiliates">
+                                    Manage Affiliates
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/affiliates/create">
+                                    Create Affiliate
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
